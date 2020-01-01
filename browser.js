@@ -39,7 +39,7 @@
     }
 
     readString8() {
-      const data = "";
+      let data = "";
       while (true) {
         const char = this.readUInt8();
         if (char == 0) {
@@ -51,7 +51,7 @@
     }
 
     readString16(le) {
-      const data = "";
+      let data = "";
       le = le || false;
       while (true) {
         const char = this.readUInt16(le);
@@ -64,7 +64,7 @@
     }
 
     readString32(length, le) {
-      const data = "";
+      let data = "";
       le = le || false;
       while (true) {
         const char = this.readUInt32(le);
@@ -133,7 +133,7 @@
     }
 
     writeString8(n) {
-      if (typeof n !== 'string') {
+      if (typeof n !== "string") {
         return;
       }
       for (let i in n) {
@@ -143,7 +143,7 @@
     }
 
     writeString16(n, le) {
-      if (typeof n !== 'string') {
+      if (typeof n !== "string") {
         return;
       }
       le = le || false;
@@ -154,7 +154,7 @@
     }
 
     writeString32(n, le) {
-      if (typeof n !== 'string') {
+      if (typeof n !== "string") {
         return;
       }
       le = le || false;
@@ -165,8 +165,5 @@
     }
   }
 
-  window.Buffer = {
-    Writer: Writer,
-    Reader: Reader
-  };
+  window.Buffer = { Writer, Reader };
 })();
